@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .forms import ImageForm
+from .models import ImageModel
 
 # Create your views here.
 def HomeView(request):
@@ -12,8 +13,10 @@ def HomeView(request):
     #     print(form.errors)   
     # else:
     #    form=ImageForm()   
-    form=ImageForm()     
+    form=ImageForm()    
+    img= ImageModel.objects.all()
 
     return render(request,'table/home.html',{
-        'form':form
+        'form':form,
+        'img':img
     })
