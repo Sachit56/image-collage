@@ -54,6 +54,9 @@
         {% for i in img %}
             <div class="image-item">
                 <img src="{{i.image.url}}" alt="">
+                <div class="image-footer">
+                    {{ i.date }}
+                </div>
             </div>
         {% endfor %}
     </div>
